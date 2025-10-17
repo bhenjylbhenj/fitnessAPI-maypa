@@ -11,7 +11,10 @@ const workoutRoutes = require("./routes/workout");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_STRING);
+// mongoose.connect(process.env.MONGODB_STRING);
+mongoose.connect(
+  "mongodb+srv://admin:admin@b561-maypa.u8cubsf.mongodb.net/fitnessTracker?retryWrites=true&w=majority&appName=B561-Maypa"
+);
 mongoose.connection.once("open", () => {
   console.log("Now connected to MONGODB Atlas.");
 });
